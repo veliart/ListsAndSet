@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.skypro.ListsAndSets.model.Employee;
 import ru.skypro.ListsAndSets.sevices.EmployeeService;
 
-import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/employees")
@@ -34,7 +34,7 @@ public class EmployeeController {
         return employeeService.remove(firstName, lastName);
     }
     @GetMapping
-    public List<Employee> getAll() {
+    public Map<String, Employee> getAll() {
         return employeeService.getAll();
     }
 
